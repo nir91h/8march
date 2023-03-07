@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat&family=Oswald:wght@400;600;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  background: linear-gradient(900deg, #ff2c87, #ff0000);
+  background-size: 300% 300%;
+  animation: animation 0.5s infinite ease-in-out;
+}
+@keyframes animation{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position:  100% 50%;
+  }
+  100%{
+    background-position: 0 50%;
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden ;
+  width: 100%;
+  position: relative;
+}
+header {
+  display: flex;
+  justify-content: end;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #ffff;
+  font-family: "Inter", sans-serif;
+  margin: 25px 25px 0 0;
+  padding: 0;
+  justify-content: end;
+  transition: 0.5s;
+}
+
+ul a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.5s;
+}
+
+ul a:hover {
+  box-shadow: 0px 0px 20px 0px;
+}
+
+.burger span:nth-child(1) {
+  transform: translateY(11px);
+}
+.burger span:nth-child(3) {
+  transform: translateY(-11px);
+}
+
+/* Крестик */
+header.open span {
+  background-color: #f55757;
+}
+
+header.open span:nth-child(1) {
+  transform: translateY(0px) rotate(45deg);
+}
+header.open span:nth-child(2) {
+  opacity: 0;
+}
+header.open span:nth-child(3) {
+  transform: translateY(0px) rotate(-45deg);
+}
+/* Крестик конец */
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+  flex-grow: 1;
+}
+
+.burger {
+  display: none;
+  width: 28px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  margin: 28px;
+  z-index: 2;
+}
+
+
+
+.burger span {
+  width: 28px;
+  height: 4px;
+  background-color: #f7a3a3;
+  display: block;
+  position: absolute;
+  left: 0;
+  border-radius: 10px;
+  top: 11px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 96px;
+  color: #ffff;
+  text-align: center;
+  margin: 30px 0;
+  
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  color: #fa93be;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 59px;
+  color: #ffff;
+  margin: 30px 0 70px;
+  width: 230px;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: right;
+  color: #fd8bd9;
+
+  margin: 0 0 0 auto;
+}
+
+footer {
+  margin-top: 85px;
+  position: relative;
+  height: 212px;
+}
+
+.card {
+  background-color: #f8caca;
+  width: 180px;
+  height: 49px;
+  margin-left: 20px;
+  text-align: center;
+}
+.card a {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #e02a2a;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.card a:hover {
+  color: #f48484;
+}
+
+.card-click {
+  margin-top: 12px;
+  clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 111px 100%);
+}
+
+.fr_bg {
+  width: 100%;
+  height: 100%;
+  background: url(../img/1bg.jpg) no-repeat center/cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  clip-path: polygon(0% 100%, 302px 0%, 100% 0%, 100% 100%);
+}
+
+@media (max-width: 700px) {
+  .burger {
+    display: block;
+  }
+  nav {
+    position: absolute;
+    right: -210px;
+     visibility: hidden; 
+  }
+  ul {
+    background-color: #f9a6a6;
+    opacity: 80%;
+    flex-direction: column;
+    color: #ff0000;
+    padding: 29px 39px 16px 15px;
+    border-radius: 10px 0 10px 10px;
+  }
+  header.open nav{
+transform: translateX(-100%);
+visibility: visible;
+  }
+}
